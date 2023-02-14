@@ -8,13 +8,13 @@ import { catchError, retry } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FetchWeatherService {
-  urlLocation = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max&current_weather=true&timezone=Europe%2FBerlin';
+  urlLocation = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=weathercode,apparent_temperature_max,apparent_temperature_min,precipitation_sum,windspeed_10m_max&current_weather=true&timezone=Europe%2FBerlin';
 
 
   constructor(private _http: HttpClient) {}
 
   getData() {
-    return this._http.get(this.urlLocation, { observe: 'response' })
+    return this._http.get(this.urlLocation, { observe: 'response', responseType: 'json' })
     .pipe(
       retry(3),
       catchError(this.handleError)

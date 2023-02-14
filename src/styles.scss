@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'src/modules/_vars.scss';
+
 html, body { 
     height: 100%; 
 }
@@ -10,17 +12,17 @@ body {
 }
 
 h1 {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: $fs-l !important;
+    font-weight: 700 !important;
 }
 
 h2 {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: $fs-s !important;
+    font-weight: 400 !important;
 }
 
 h1, h2 {
-    margin: 0;
+    margin: 0 !important;
 }
 
 

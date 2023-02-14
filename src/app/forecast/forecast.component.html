@@ -7,30 +7,84 @@
     <div class="today-infos">
       <div class="today-temp">
         <span class="addition">Temperature</span>
-        <span>27 °C</span>
+        <span class="info-today"
+          >{{
+            newData?.current_weather.temperature | number : "1.0-0"
+          }}
+          °C</span
+        >
       </div>
       <div class="today-wind-speed">
         <span class="addition">Wind speed</span>
-        <span>1 km/h</span>
+        <span class="info-today"
+          >{{
+            newData?.current_weather.windspeed | number : "1.0-0"
+          }}
+          km/h</span
+        >
       </div>
     </div>
-    <div class="weather-icon">
-      <img src="" alt="" />
-    </div>
+
+    <img
+      class="weather-icon"
+      src="assets/img/{{
+        this.showWeather(this.newData?.current_weather.weathercode)
+      }}.png"
+      alt="weather-icon"
+      title="{{ this.showWeather(this.newData?.current_weather.weathercode) }}"
+    />
   </div>
 </div>
 <div class="weather-forecast">
   <h2>Forecast</h2>
-  <div class="forecast-weekday-wrapper" *ngFor="let weekday of weekdays">
-    <div class="weekday">{{ weekday }}</div>
-    <div class="maxTemp temp">
-      <span class="addition">max.</span> <span>temp °C</span>
+  <div
+    class="forecast-day-wrapper"
+    *ngFor="let day of newData?.daily.time; let i = index"
+  >
+    <div class="day">{{ day | date : "EEEE" }}</div>
+    <div>
+      <img
+        class="forecast-weather-icon"
+        src="assets/img/{{
+          this.showWeather(this.newData?.daily.weathercode[i])
+        }}.png"
+        alt="weather-icon"
+        title="{{ this.showWeather(this.newData?.daily.weathercode[i]) }}"
+      />
     </div>
-    <div class="minTemp temp">
-      <span class="addition">min.</span> <span>temp °C</span>
+    <div class="temp">
+      <span class="addition">max.</span>
+      <span class="info-forecast"
+        >{{ newData?.daily?.apparent_temperature_max[i] | number : "1.0-0" }}
+        {{ newData?.daily_units?.apparent_temperature_max }}</span
+      >
+    </div>
+    <div class="temp">
+      <span class="addition">min.</span>
+      <span class="info-forecast"
+        >{{ newData?.daily?.apparent_temperature_min[i] | number : "1.0-0" }}
+        {{ newData?.daily_units?.apparent_temperature_min }}</span
+      >
     </div>
     <div class="precip">
-      <span class="addition">Precipitation</span> <span>1 mm</span>
+      <span class="addition">Precipitation</span>
+      <span class="info-forecast"
+        ><span
+          >{{ newData?.daily?.precipitation_sum[i] | number : "1.0-0" }}
+          {{ newData?.daily_units?.precipitation_sum }}</span
+        ></span
+      >
     </div>
   </div>
 </div>
+
+<!-- <a href="https://www.flaticon.com/free-icons/wind" title="wind icons">Wind icons created by iconixar - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by Freepik - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons created by iconixar - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/free-icons/rainy" title="rainy icons">Rainy icons created by Debruder Studio - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/free-icons/sky" title="sky icons">Sky icons created by Stasy - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/free-icons/fog" title="fog icons">Fog icons created by Freepik - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/free-icons/drizzle" title="drizzle icons">Drizzle icons created by lutfix - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/free-icons/snowy" title="snowy icons">Snowy icons created by Superarticons - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/free-icons/thunderstorm" title="thunderstorm icons">Thunderstorm icons created by Slidicon - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/free-icons/circle" title="circle icons">Circle icons created by FR_Media - Flaticon</a> -->
