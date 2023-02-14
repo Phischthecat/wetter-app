@@ -1,0 +1,55 @@
+@import 'src/modules/_vars.scss';
+
+:host {
+    width: 400px;
+    padding: 16px;
+    background-color: lightgrey;
+    border-radius: $border-radius;
+}
+.header {
+    margin-bottom: 8px;
+}
+
+.addition {
+    font-size: 12px;
+}
+
+.weather-today {    
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .today-wrapper {
+        .today-infos {
+            display: flex;
+            gap: 30px;
+
+            .today-temp, .today-wind-speed {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+.weather-forecast {
+    display: flex;
+    flex-direction: column;
+
+    .forecast-weekday-wrapper {
+        display: grid;
+        grid-template-columns: 110px 1fr 1fr 1fr;
+        height: 50px;
+        grid-gap: 10px;
+        align-items: center;
+
+        .weekday {
+            font-size: 20px;            
+        }
+
+        .temp, .precip {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

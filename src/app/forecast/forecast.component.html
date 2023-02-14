@@ -1,0 +1,36 @@
+<div class="header">
+  <h1>Weather Application</h1>
+</div>
+<div class="weather-today">
+  <h2>Today</h2>
+  <div class="today-wrapper">
+    <div class="today-infos">
+      <div class="today-temp">
+        <span class="addition">Temperature</span>
+        <span>27 °C</span>
+      </div>
+      <div class="today-wind-speed">
+        <span class="addition">Wind speed</span>
+        <span>1 km/h</span>
+      </div>
+    </div>
+    <div class="weather-icon">
+      <img src="" alt="" />
+    </div>
+  </div>
+</div>
+<div class="weather-forecast">
+  <h2>Forecast</h2>
+  <div class="forecast-weekday-wrapper" *ngFor="let weekday of weekdays">
+    <div class="weekday">{{ weekday }}</div>
+    <div class="maxTemp temp">
+      <span class="addition">max.</span> <span>temp °C</span>
+    </div>
+    <div class="minTemp temp">
+      <span class="addition">min.</span> <span>temp °C</span>
+    </div>
+    <div class="precip">
+      <span class="addition">Precipitation</span> <span>1 mm</span>
+    </div>
+  </div>
+</div>
