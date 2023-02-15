@@ -13,6 +13,7 @@ export class FetchWeatherService {
 
   constructor(private _http: HttpClient) {}
 
+  // communication with the api to get the needed infomation
   getData() {
     return this._http.get(this.urlLocation, { observe: 'response', responseType: 'json' })
     .pipe(
@@ -21,6 +22,7 @@ export class FetchWeatherService {
     );
   }
 
+  // handling of possible errors
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       console.error('An error occurred:', error.error);

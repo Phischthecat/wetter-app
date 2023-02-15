@@ -4,7 +4,7 @@ import { ForecastComponent } from './forecast/forecast.component';
 import { StartScreenComponent } from './start-screen/start-screen.component';
 
 const routes: Routes = [
-  {path: '', component:StartScreenComponent},
+  {path: '', component: StartScreenComponent},
   {path: 'forecast', component:ForecastComponent}
 ];
 

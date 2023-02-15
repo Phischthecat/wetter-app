@@ -8,17 +8,15 @@ import { FetchWeatherService } from '../fetch-weather.service';
 })
 export class ForecastComponent {
 newData: any;
-// imgPath: any;
 constructor(private _apiService: FetchWeatherService) {}
 
 ngOnInit() {
   this._apiService.getData().subscribe((res) => {
-    this.newData = {...res.body!};
-    console.log(this.newData);
-    
+    this.newData = {...res.body!};    
   });
 }
 
+// transform the weather code to show images
 showWeather(weathercode: number) {
   let imgPath;
   switch (weathercode) {
