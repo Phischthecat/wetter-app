@@ -4,23 +4,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 100px;
     height: 100vh;
     width: 100%;
+    text-align: center;
+    padding: $container-padding;
+    box-sizing: border-box;
 
     button {
-        height: 100px;
-        width: 150px;
         font-size: 30px;
         font-weight: 600;
-        background-color: #ffa500;
+        background-color: $bgClr-btn;
+        color: $txt-clr;
         border: none;
         border-radius: $border-radius;
+        padding: $btn-padding;
         cursor: pointer;
         box-shadow: $box-shadow-btn;
         transition: all 225ms ease-in;
 
         &:hover {
-            scale: 1.1;
+            background-color: $bgClr-btn-hover;
             box-shadow: $box-shadow-btn-hover;
         }
     }

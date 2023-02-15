@@ -42,7 +42,7 @@
     *ngFor="let day of newData?.daily.time; let i = index"
   >
     <div class="day">{{ day | date : "EEEE" }}</div>
-    <div>
+    <div class="icon">
       <img
         class="forecast-weather-icon"
         src="assets/img/{{

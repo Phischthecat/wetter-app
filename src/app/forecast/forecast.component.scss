@@ -2,9 +2,20 @@
 
 :host {
     width: 400px;
-    padding: 32px;
-    background-color: lightgrey;
+    padding: $container-padding;
+    background-color: $bgClr-primary;
     border-radius: $border-radius;
+    transition: all 225ms ease-in;
+
+    @media (max-width: 460px) {
+        height: 100%;
+        width: 100%;
+        padding: $container-padding * 0.5;
+    }
+    
+    @media (max-width: 370px) {
+        padding: $container-padding * 0.3;
+    }
 }
 
 .addition {
@@ -17,6 +28,10 @@
 
 .info-forecast {
     font-size: $fs-s;
+    
+    @media (max-width: 370px) {
+        font-size: $fs-s * 0.9;
+    }
 }
 
 .weather-today {    
@@ -47,13 +62,22 @@
 
     .forecast-day-wrapper {
         display: grid;
-        grid-template-columns: 110px 1fr 1fr 1fr 1fr;
-        height: 50px;
+        grid-template-columns: 95px 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px;
         grid-gap: 10px;
         align-items: center;
+        
+        @media (max-width: 370px) {
+            grid-template-columns: 95px 1fr 1fr 1fr;
+            grid-gap: 5px;
+        }
 
         .day {
-            font-size: $fs-s;            
+            font-size: $fs-s; 
+
+            @media (max-width: 370px) {
+                font-size: $fs-s * 0.9;
+            }           
         }
 
         .forecast-weather-icon {
@@ -64,6 +88,16 @@
         .temp, .precip {
             display: flex;
             flex-direction: column;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 370px) {
+                display: none;
+            }
         }
     }
 }

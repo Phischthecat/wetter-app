@@ -1,12 +1,17 @@
-$BgClr-btn: #ffa500;
-
+$bgClr-btn: #004e76;
+$bgClr-btn-hover: #004e76cc;
+$bgClr-primary: #d3d3d3;
+$txt-clr: #fff;
 
 $fs-xxs: 12px;
 $fs-s: 18px;
 $fs-m: 20px;
 $fs-l: 22px;
 
-$border-radius: 10px;
+$border-radius: 6px;
+
+$btn-padding: 18px 60px 18px 60px;
+$container-padding: 32px;
 
 $box-shadow-btn:  1.4px 1.4px 2.2px rgba(0, 0, 0, 0.039),
                         3.3px 3.3px 5.3px rgba(0, 0, 0, 0.043),
